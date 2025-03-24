@@ -1,0 +1,6 @@
+models:
+  m_jaminan:
+    id
+    name: string
+    softDeletes
+    timestamps
