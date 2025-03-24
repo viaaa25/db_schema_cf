@@ -274,7 +274,7 @@ hr_:
   softDeletes
   timestamps
 
-  hr_warning:
+hr_warning:
   ID
   warning_date: date
   employee_id: varchar:100

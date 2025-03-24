@@ -1,6 +1,292 @@
 models:
-  m_jaminan:
-    id
-    name: string
-    softDeletes
-    timestamps
+ hr_activity:
+  ID
+  EMPLOYEE_ID: varchar:100
+  JOB_ID: varchar:100
+  VAL_DATE: datetime
+  INPUT_DATE: datetime
+  VAL:  decimal:20,2
+  DESCR: varchar:1450
+  APPROVAL_FLAG: varchar:45
+  APPROVAL_ID: varchar:100
+  APPROVAL_TIME: datetime
+  softDeletes
+  timestamps
+
+hr_cv:
+  ID
+  NIK: varchar:45
+  NAMA_PERUSAHAAN: varchar:1000
+  ALAMAT_PERUSAHAAN: varchar:1000
+  BIDANG:	varchar:1000
+  BAGIAN:	varchar:1000
+  MASUK: date
+  KELUAR:	date
+  GAJI: varchar:45
+  softDeletes
+  timestamps
+
+hr_dayoff:
+  id
+  day_off: date
+  name: varchar:200
+  type: varchar:200
+  cut_flag: varchar:45
+  descr: svarchar:2000
+  softDeletes
+  timestamps
+
+hr_division:
+  ID
+  MASTER_NAME: varchar:200
+  UPPER_LEVEL: varchar:100
+  DESCRIPTION: varchar:200
+  softDeletes
+  timestamps
+
+hr_employee:
+  ID
+  NIK: varchar:7
+  NAMA:	varchar:100
+  AO_CODE: varchar:45
+  BLOOD_TYPE: varchar:45
+  GENDER: varchar:45
+  PENDIDIKAN: varchar:100
+  UNIVERSITAS: varchar:100
+  JURUSAN: varchar:45
+  IPK: varchar:100
+  IBU_KANDUNG: varchar:100
+  STATUS_KARYAWAN: varchar:45
+  NAMA_PASANGAN: varchar:100
+  TANGGUNGAN: varchar:45
+  NO_KTP: varchar:100
+  NAMA_KTP:	varchar:100
+  ALAMAT_KTP: varchar:2000
+  SECTOR_KTP: varchar:200
+  DISTRICT_KTP:	varchar:200
+  SUB_DISTRICT_KTP:	varchar:200
+  ALAMAT_TINGGAL: varchar:2000
+  SECTOR_TINGGAL: varchar:45
+  DISTRICT_TINGGAL: varchar:200
+  SUB_DISTRICT_TINGGAL: varchar:200
+  TGL_LAHIR: date
+  TEMPAT_LAHIR: varchar:100
+  AGAMA: varchar:100
+  TELP: varchar:100
+  HP: varchar:100
+  NO_REK_CF: varchar:100
+  NO_REK_TF: varchar:100
+  EMAIL: varchar:100
+  NPWP: varchar:100
+  SUMBER_LOKER: varchar:45
+  KET_LOKER: varchar:45
+  INTERVIEW: varchar:100
+  TGL_KELUAR: varchar:45
+  ALASAN_KELUAR: varchar:45
+  CUTI: varchar:45
+  PHOTO_LOC: varchar:45
+  SPV: varchar:100
+  STATUS_MST: varchar:45
+  softDeletes
+  timestamps
+
+hr_employee_document:
+  ID
+  NIK
+  doc_path
+  doc_type
+  upload_date
+  softDeletes
+  timestamps
+
+hr_insurance:
+  ID
+  NIK: varchar:45
+  NO_PESERTA: varchar:100
+  TGL_TERBIT: date
+  TGL_BERAKHIR: date
+  JENIS	varchar:45
+  softDeletes
+  timestamps
+
+hr_job_spec:
+  ID
+  EMPLOYEE_ID: varchar:100
+  JOB_SPEC: varchar:2000
+  softDeletes
+  timestamps
+
+hr_leave:
+  id
+  employee_id: varchar:100
+  leave_date_start: date
+  leave_date_end: date
+  leave_type: varchar:200
+  attachment: varchar:200
+  reason: varchar:1000
+  subtitute: varchar:100
+  SPV: varchar:100
+  SPV_NOTE: varchar:400
+  SPV_LOG: varchar:200
+  HR: varchar:100
+  HR_NOTE: varchar:400
+  HR_LOG: varchar:200
+  CREATE_USER: varchar:100
+  CREATE_DATE: date
+  MOD_USER: varchar:100
+  MOD_DATE: date
+  VERSION: int:11
+  softDeletes
+  timestamps
+
+hr_leave_day:
+  ID
+  POINT_START: int:4
+  POINT_END: int:4
+  VAL: int:4
+  softDeletes
+  timestamps
+
+hr_leave_extra:
+  ID
+  EMPLOYEE_ID: varchar:100
+  INPUT_DATE: datetime
+  VAL: int:3
+  REASON: varchar:450
+  softDeletes
+  timestamps
+
+hr_leave_letter:
+  ID
+  hr_leave_id: varchar:100
+  file_loc: varchar:400
+  softDeletes
+  timestamps
+
+hr_leave_type:
+  ID
+  type: varchar:45
+  name: varchar:200
+  cut_flag: varchar:45
+  day_count: int:4
+  softDeletes
+  timestamps
+
+hr_main_job:
+  ID
+  employee_id
+  job_desk
+  priority
+  start_date
+  end_date
+  descr
+  approval_flag
+  approval_id
+  approval_tim
+  softDeletes
+  timestamps
+
+hr_notes:
+  ID
+  NIK: varchar:100
+  TANGGAL: date
+  CATATAN: varchar:1000
+  softDeletes
+  timestamps
+
+hr_office_hour:
+  ID
+  employee_id
+  jam_masuk
+  jam_pulang
+  limit_jam_masuk
+  limit_jam_pulang
+  jam_istirahat_mulai
+  jam_istirahat_selesai
+  break_flag
+  entry_flag
+  exit_flag
+  softDeletes
+  timestamps
+
+hr_overtime:
+  id
+  employee_id
+  overtime_date_start
+  overtime_date_end
+  overtime_type
+  reason
+  SPV
+  SPV_NOTE
+  SPV_LOG
+  HR
+  HR_NOTE
+  HR_LOG
+  CREATE_USER
+  CREATE_DATE
+  MOD_USER
+  MOD_DATE
+  VERSION
+  softDeletes
+  timestamps
+
+hr_position:
+  ID
+  MASTER_NAME: varchar:200
+  UPPER_LEVEL: varchar:100
+  DESCRIPTION: varchar:200
+  softDeletes
+  timestamps
+
+hr_rolling:
+  ID
+  NIK
+  TANGGAL_MULAI
+  BAGIAN
+  JABATAN
+  KANTOR
+  STATUS
+  GRADE
+  TGL_SPK
+  NO_SPK
+  SPV
+  USE_FLAG
+  softDeletes
+  timestamps
+
+hr_rules:
+  id
+  name: varchar:200
+  type: varchar:45
+  descr: varchar:2000
+  softDeletes
+  timestamps
+
+hr_:
+  ID
+  NIK
+  MATERI
+  JENIS
+  START_DATE
+  END_DATE
+  KETERANGAN
+  LEVEL
+  SPEAKER
+  softDeletes
+  timestamps
+
+hr_warning:
+  ID
+  warning_date: date
+  employee_id: varchar:100
+  rules_id: varchar:100
+  warning_type: varchar:45
+  punishment: varchar:1000
+  descr: varchar:2000
+  supervisor_flag: varchar:20
+  supervisor_date: date
+  hr_flag: varchar:4
+  hr_date: date
+  softDeletes
+  timestamps
+
